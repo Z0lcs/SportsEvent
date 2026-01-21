@@ -61,8 +61,12 @@ public class SportsEvent
     public double Average()
     {
         // TODO : Calculate the average without lowest and highest score
-
-        return 0;
+        double avg = 0;
+        for (int i = 0; i < scores.Length; i++)
+        {
+            avg += scores[i];
+        }
+        return avg /= scores.Length;
     }
     /// &lt;summary&gt;
     /// This method prints a summary report which includes the original list of
