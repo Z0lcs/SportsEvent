@@ -18,8 +18,16 @@ public class SportsEvent
     /// &lt;returns&gt;The lowest score in scores&lt;/returns&gt;
     public double Lowest()
     {
+        double min=scores[0];
         // TODO : Determine the lowest score
-        return 0;
+        foreach (double s in scores)
+        {
+            if (s < min)
+            {
+                min = s;
+            }
+        }
+        return min;
     }
     /// &lt;summary&gt;
     /// Determines which score in scores is the highest
