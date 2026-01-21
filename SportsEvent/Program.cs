@@ -15,10 +15,11 @@ public class SportsEvent
     {
         // TODO : Implement reading 8 scores from the user
         Console.WriteLine("Enter Eight Contestant Scores:");
+        int k=0;
         for (int i = 1; i < 9; i++)
         {
             Console.Write($"Judge {i} --> ");
-            scores[i]= Convert.ToDouble(Console.ReadLine());
+            scores[k++]= Convert.ToDouble(Console.ReadLine());
         }
     }
     /// &lt;summary&gt;
