@@ -28,7 +28,13 @@ public class SportsEvent
     public double Highest()
     {
         // TODO : Determine the highest score
-        return 0;
+        double high = scores[0];
+        foreach (int i in scores)
+        {
+            if (high < scores[i])
+                high = scores[i];
+        }
+        return high;
     }
     /// &lt;summary&gt;
     /// Calculates the average of scores with the lowest and highest scores
@@ -56,7 +62,7 @@ public class SportsEvent
     public static void Main(string[] args)
     {
         SportsEvent app = new SportsEvent();
-        app.ReadScores();
-        app.PrintSummary();
+        //app.ReadScores();
+        //app.PrintSummary();
     }
 }
