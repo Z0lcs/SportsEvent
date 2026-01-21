@@ -47,10 +47,10 @@ public class SportsEvent
     {
         // TODO : Determine the highest score
         double high = scores[0];
-        foreach (int i in scores)
+        foreach (double i in scores)
         {
-            if (high < scores[i])
-                high = scores[i];
+            if (high < i)
+                high = i;
         }
         return high;
     }
@@ -76,6 +76,18 @@ public class SportsEvent
     public void PrintSummary()
     {
         // TODO : Print summary report
+        Console.WriteLine(new string(' ', 8)+"Summary Report"+ new string(' ', 8));
+        Console.WriteLine(new string('-', 30));
+        Console.Write("Scores =");
+        for (int i = 0;i < scores.Length;i++)
+        {
+            Console.Write($" {scores[i]}");
+        }
+        Console.WriteLine();
+        Console.WriteLine($"Lowest Score = {Lowest()}");
+        Console.WriteLine($"Highest Score = {Highest()}");
+        Console.WriteLine($"Average Score = {Average()}");
+
     }
     /// &lt;summary&gt;
     /// Program entry point.
@@ -84,7 +96,7 @@ public class SportsEvent
     public static void Main(string[] args)
     {
         SportsEvent app = new SportsEvent();
-        //app.ReadScores();
-        //app.PrintSummary();
+        app.ReadScores();
+        app.PrintSummary();
     }
 }
