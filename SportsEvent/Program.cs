@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
+using System.Runtime.Serialization.Formatters;
 using static System.Formats.Asn1.AsnWriter;
 public class SportsEvent
 {
@@ -11,6 +14,12 @@ public class SportsEvent
     public void ReadScores()
     {
         // TODO : Implement reading 8 scores from the user
+        Console.WriteLine("Enter Eight Contestant Scores:");
+        for (int i = 1; i < 9; i++)
+        {
+            Console.Write($"Judge {i} --> ");
+            scores[i]= Convert.ToDouble(Console.ReadLine());
+        }
     }
     /// &lt;summary&gt;
     /// Determines which score in scores is the lowest
